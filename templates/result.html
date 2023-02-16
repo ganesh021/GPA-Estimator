@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Get calculation of marks pointer and percentage in Pune University">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+
+    <title>Results for Marks at SPPU</title>
+</head>
+
+<body>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js"
+        integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J"
+        crossorigin="anonymous"></script>
+
+    <!-------------------------------------------------------------------------------------------------->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">SPPU Pointer Estimator</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about">About</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="home">Estimate Marks</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="homecalc">Predict Pointer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contactdeveloper">Contact Developer</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-------------------------------------------------------------------------------------------------->
+
+    <div class="container">
+
+        <!----------------------------------------------------------------------------->
+
+        <div class="card my-3">
+            <h4 class="card-header bg-success text-white">Estimated Marks</h4>
+            <div class="card-body">
+                <h6 class="card-title bd-light text-secondary">Following are the Marks Required in Each Subject to score
+                    your Target Pointer :
+                    {{pointer}} , factoring your relative Difficulty Preferences for each Subject. </h6>
+            </div>
+        </div>
+
+        <!----------------------------------------------------------------------------->
+
+        <table class="table">
+            <thead>
+                <tr class="bg-success text-white">
+                    <th class="align-middle" scope="col">
+                        <h5>Subject</h5>
+                    </th>
+                    <th class="align-middle" scope="col">
+                        <h5>InSem</h5>
+                    </th>
+                    <th class="align-middle" scope="col">
+                        <h5>EndSem</h5>
+                    </th>
+                    <th class="align-middle" scope="col">
+                        <h5>Total</h5>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th class="text-success" scope="row">{{subjectL.0}}</th>
+                    <td>{{insem.0}}</td>
+                    <td>{{endsem.0}}</td>
+                    <td>{{totalL.0}}</td>
+                </tr>
+                <tr>
+                    <th class="text-success" scope="row">{{subjectL.1}}</th>
+                    <td>{{insem.1}}</td>
+                    <td>{{endsem.1}}</td>
+                    <td>{{totalL.1}}</td>
+                </tr>
+                <tr>
+                    <th class="text-success" scope="row">{{subjectL.2}}</th>
+                    <td>{{insem.2}}</td>
+                    <td>{{endsem.2}}</td>
+                    <td>{{totalL.2}}</td>
+                </tr>
+                <tr>
+                    <th class="text-success" scope="row">{{subjectL.3}}</th>
+                    <td>{{insem.3}}</td>
+                    <td>{{endsem.3}}</td>
+                    <td>{{totalL.3}}</td>
+                </tr>
+                <tr>
+                    <th class="text-success" scope="row">{{subjectL.4}}</th>
+                    <td>{{insem.4}}</td>
+                    <td>{{endsem.4}}</td>
+                    <td>{{totalL.4}}</td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <!-------------------------------------------------------------------------------------->
+        <div class="alert alert-warning" role="alert">
+            <div>
+                Insem : {{msgMarksOutOfL.0}}
+            </div>
+            <div>
+                EndSem : {{msgMarksOutOfL.1}}
+            </div>
+            <div>
+                {{msgprojectL.0}}
+            </div>
+        </div>
+        <!-------------------------------------------------------------------------------------->
+
+        <div class="border border-danger text-danger my-3">
+            <div class="col">
+                <em>
+                    <div> <strong>NOTE</strong> :</div>
+                    <div>
+                        <strong> 1. Minimum marks</strong> required in each subject inorder to score your Target pointer
+                        are
+                        calculated and a <strong>Safety Factor of 2% to 3%</strong> is maintained on Higher Side for
+                        calculating marks.
+                    </div>
+                    <div>
+                        <strong> 2.</strong> Minimum marks required in each subject are <strong> prioritized with
+                            respect to your selected relative difficuilty </strong> preferences. ie. If you choose a
+                        subject as Hard, you will
+                        need to
+                        score comparatively less marks in this subject compared to others choosed as Easy or Moderate.
+                        At the
+                        same time care is taken that your Target pointer remains intact.
+                    </div>
+                    <div>
+                        <strong>3.</strong> The actual results <strong>May Vary Slightly</strong> since here we are not
+                        including
+                        Practicals & Oral marks.
+                        Although
+                        the deviation would be very minute because practicals & orals are having very less credits as
+                        compared
+                        to Theory Examination.
+                    </div>
+                    <div>
+                        <strong>4.</strong> If you entered <strong>Very High Target Pointer</strong> in such
+                        circumstances marks wont factor in for difficuilty preferences, because for very High Pointer
+                        eventually you will require Highest Marks in each Subject.
+                    </div>
+                </em>
+            </div>
+        </div>
+
+    </div>
+    
+    <!------------------------------------ Share ------------------------------------------->
+    <div class="d-flex justify-content-center my-3">
+        <div class="d-inline-flex p-2 bd-highlight " style="border: 3px solid greenyellow; border-radius:20px;">
+            <div class="align-self-center p-2 flex-fill text-primary "><strong>Share with Friends</strong></div>
+            <div>
+                <a href="whatsapp://send?text=[TITLE] [URL_FULL]" class="btn btn-success btn-sm my-1 ">
+                    Whattsapp</a>
+                <a href="http://www.facebook.com/share.php?u=YOUR_URL" target="_blank"
+                    class="btn btn-primary btn-sm my-1 ">Facebook</a>
+            </div>
+        </div>
+    </div>
+    <!----------------------------------- Back --------------------------------------------->
+    <div class="d-flex justify-content-center my-3">
+        <a href="javascript:history.go(-1)" class="btn btn-outline-primary"><strong>Back</strong></a>
+    </div>
+    <!----------------------------------------------------------------------------------->
+    <footer class="container py-3 col-12 bg-dark text-white">
+        <div class="row">
+            <div class="col-md ">
+                <div class="d-flex justify-content-center mb-0">
+                    Developer
+                </div>
+                <div class="d-flex justify-content-center mb-0">
+                    <h5>Ganesh B Patil</h5>
+                </div>
+            </div>
+
+
+            <div class="col-md my-2">
+                <div class="d-flex justify-content-center text-center my-0" style="line-height: 100%;">Suggestions for
+                    improvement or subject modification are welcomed </div>
+                <div class="d-flex justify-content-center text-center my-0">Drop a Mail at</div>
+                <a href="mailto:sppupointerestimator@gmail.com"
+                    class="d-flex justify-content-center my-0">sppupointerestimator@gmail.com</a>
+            </div>
+
+        </div>
+    </footer>
+
+    <!--------------------------------------------------------------------------------------------------->
+
+
+</body>
+
+</html>

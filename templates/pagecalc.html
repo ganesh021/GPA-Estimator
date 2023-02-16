@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Enter marks to know your Pointer for insem and endsem">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css"
+        integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+
+    <title>Calculate Pointer for SPPU</title>
+</head>
+
+<body>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/js/bootstrap.min.js"
+        integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J"
+        crossorigin="anonymous"></script>
+
+    <!-------------------------------------------------------------------------------------------------->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">SPPU Pointer Estimator</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="home">Estimate Marks</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="homecalc">Predict Pointer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contactdeveloper">Contact Developer</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-------------------------------------------------------------------------------------------------->
+    <div class="container">
+        <form action="resultcalc">
+            <!------------------------------------------------------------------------------------->
+
+            <div class="card my-3">
+                <h4 class="card-header alert-primary">Enter Marks</h4>
+                <div class="card-body">
+                    <h6 class="card-title bd-light text-secondary"> Enter your Estimated Marks for
+                        each Subject - To calculate corresponding Pointer.
+                    </h6>
+                </div>
+            </div>
+
+            <!------------------------------------------------------------------------------------->
+            <table class="table">
+                <thead>
+                    <tr class="alert-primary">
+                        <th class="align-middle" scope="col">
+                            <h5>Subject</h5>
+                        </th>
+                        <th class="align-middle" scope="col">
+                            <h5>InSem</h5>
+                        </th>
+                        <th class="align-middle" scope="col">
+                            <h5>EndSem</h5>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="">
+                        <td>{{subjectL.0}}</td>
+                        <td class="">
+                            <input type="number" style="width:100px" name="inM1" min="0" max="{{msgMarksOutOfL.0}}"
+                                placeholder="Out of {{msgMarksOutOfL.0}}" required>
+                        </td>
+                        <td class="">
+                            <input type="number" style="width:100px" name="endM1" min="0" max="{{msgMarksOutOfL.1}}"
+                                placeholder="Out of {{msgMarksOutOfL.1}}" required>
+                        </td>
+                    </tr>
+                    <tr class="">
+                        <td>{{subjectL.1}}</td>
+                        <td class="">
+                            <input type="number" style="width:100px" name="inM2" min="0" max="{{msgMarksOutOfL.0}}"
+                                placeholder="Out of {{msgMarksOutOfL.0}}" required>
+                        </td>
+                        <td class="">
+                            <input type="number" style="width:100px" name="endM2" min="0" max="{{msgMarksOutOfL.1}}"
+                                placeholder="Out of {{msgMarksOutOfL.1}}" required>
+                        </td>
+                    </tr>
+                    <tr class="">
+                        <td>{{subjectL.2}}</td>
+                        <td class="">
+                            <input type="number" style="width:100px" name="inM3" min="0" max="{{msgMarksOutOfL.0}}"
+                                placeholder="Out of {{msgMarksOutOfL.0}}" required>
+                        </td>
+                        <td class="">
+                            <input type="number" style="width:100px" name="endM3" min="0" max="{{msgMarksOutOfL.1}}"
+                                placeholder="Out of {{msgMarksOutOfL.1}}" required>
+                        </td>
+                    </tr>
+                    <tr class="">
+                        <td>{{subjectL.3}}</td>
+                        <td class="">
+                            <input type="number" style="width:100px" name="inM4" min="0" max="{{msgMarksOutOfL.0}}"
+                                placeholder="Out of {{msgMarksOutOfL.0}}" required>
+                        </td>
+                        <td class="">
+                            <input type="number" style="width:100px" name="endM4" min="0" max="{{msgMarksOutOfL.1}}"
+                                placeholder="Out of {{msgMarksOutOfL.1}}" required>
+                        </td>
+                    </tr>
+                    <tr class="">
+                        <td>{{subjectL.4}}</td>
+                        <td class="">
+                            <input type="number" style="width:100px" name="inM5" min="0" max="{{msgMarksOutOfL.0}}"
+                                placeholder="Out of {{msgProjectOutOfL.0}}" required>
+                        </td>
+                        <td class="">
+                            <input type="number" style="width:100px" name="endM5" min="0" max="{{msgMarksOutOfL.1}}"
+                                placeholder="Out of {{msgProjectOutOfL.1}}" required>
+                        </td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary" style="margin-right: 20px;"><strong>Calculate Pointer</strong></button>
+                <a href="javascript:history.go(-1)" class="btn btn-outline-primary"><strong>Back</strong></a>
+            </div>
+        </form>
+
+        <div class="text-center text-danger my-3 col">
+            <em> {{msgprojectL.0}} </em>
+        </div>
+
+    </div>
+    <!----------------------------------------------------------------------------------->
+
+    <footer class="container py-3 col-12 bg-dark text-white">
+        <div class="row">
+            <div class="col-md ">
+                <div class="d-flex justify-content-center mb-0">
+                    Developer
+                </div>
+                <div class="d-flex justify-content-center mb-0">
+                    <h5>Ganesh B Patil</h5>
+                </div>
+            </div>
+
+
+            <div class="col-md my-2">
+                <div class="d-flex justify-content-center text-center my-0" style="line-height: 100%;">Suggestions for
+                    improvement or subject modification are welcomed </div>
+                <div class="d-flex justify-content-center text-center my-0">Drop a Mail at</div>
+                <a href="mailto:sppupointerestimator@gmail.com"
+                    class="d-flex justify-content-center my-0">sppupointerestimator@gmail.com</a>
+            </div>
+
+        </div>
+    </footer>
+
+    <!--------------------------------------------------------------------------------------------------->
+
+
+
+
+</body>
+
+</html>
